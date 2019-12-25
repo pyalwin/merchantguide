@@ -49,13 +49,19 @@ def merchant_code(inputs):
         (inp_value, codes, metal) = translate_to_codes(vals, codes)
         metals[metal] = int(credit_value) / inp_value
     else:
+      question_sentence = sentence.split(' is ')
       try:
-        question = sentence.split(' is ')[1]
+        question = question_sentence[1]
         question = question.split(' ?')[0]
         (inp_value, codes, metal) = translate_to_codes(question,codes) 
         if metal:
-          final_value = int(inp_value * metals[metal])
-          answers.append(question + ' is ' + str(final_value) + ' Credits') 
+          calc_value = int(inp_value * metals[metal])
+          comp_metal = question_sentence[0].split()[-1]
+          if comp_metal in metals.keys():
+            final_value = calc_value / metals[comp_metal]
+            answers.append(question + ' is ' + str(final_value) + ' ' + comp_metal)
+          else:
+            answers.append(question + ' is ' + str(calc_value) + ' Credits') 
         else:
           answers.append(question + ' is ' + str(inp_value)) 
       except Exception as e:
@@ -64,7 +70,7 @@ def merchant_code(inputs):
   print (codes, answers)
 
 
-merchant_code(['glob is I', 'prok is V', 'pish is X','tegj is L', 'hnga is C','glob glob Silver is 34 Credits', 'glob prok Gold is 57800 Credits', 'pish pish Iron is 3910 Credits', 'how much is pish hnga glob glob ?', 'how many Credits is glob prok Silver ?','how many Credits is glob prok Gold ?','how many Credits is glob prok Iron ?', 'how many Credits is glob prok Wood ?'])
+merchant_code(['glob is I', 'prok is V', 'pish is X','tegj is L', 'hnga is C','glob glob Silver is 34 Credits', 'glob prok Gold is 57800 Credits', 'pish pish Iron is 3910 Credits', 'how much is pish hnga glob glob ?', 'how many Credits is glob prok Silver ?','how many Credits is glob prok Gold ?','how many Credits is glob prok Iron ?', 'how many Credits is glob prok Wood ?', 'how many Silver is glob Gold ?'])
         
         
 
