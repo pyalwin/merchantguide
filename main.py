@@ -70,9 +70,6 @@ def merchant_code(inputs):
   print (codes, answers)
 
 
-<<<<<<< HEAD
-merchant_code(['glob is I', 'prok is V', 'pish is X','tegj is L', 'hnga is C','glob glob Silver is 34 Credits', 'glob prok Gold is 57800 Credits', 'pish pish Iron is 3910 Credits', 'how much is pish hnga glob glob ?', 'how many Credits is glob prok Silver ?','how many Credits is glob prok Gold ?','how many Credits is glob prok Iron ?', 'how many Credits is glob prok Wood ?', 'how many Silver is glob Gold ?'])
-=======
 merchant_code(['glob is I', 
                'prok is V', 
                'pish is X',
@@ -85,8 +82,8 @@ merchant_code(['glob is I',
                'how many Credits is glob prok Silver ?',
                'how many Credits is glob prok Gold ?',
                'how many Credits is glob prok Iron ?', 
-               'how many Credits is glob prok Wood ?'])
->>>>>>> origin/master
+               'how many Credits is glob prok Wood ?',
+               'how many Silver is glob Gold ?'])
         
         
 
